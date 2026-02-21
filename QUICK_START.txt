@@ -1,0 +1,91 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                    FLEETFLOW - QUICK START GUIDE                     ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📦 INSTALLATION (3 STEPS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Install Dependencies:
+   npm run install-all
+
+2. Configure Database (.env file):
+   DB_PASSWORD=your_mysql_password
+
+3. Setup Database:
+   npm run setup-db
+
+▶️  RUN APPLICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   npm run dev
+
+   Then open: http://localhost:3000
+
+🔐 DEFAULT LOGIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Email:    admin@fleetflow.com
+   Password: admin123
+
+📊 FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   ✓ Dashboard - Real-time KPIs and fleet overview
+   ✓ Vehicles - Complete asset management
+   ✓ Drivers - License tracking & compliance
+   ✓ Trips - Smart dispatcher with validation
+   ✓ Maintenance - Service logs with auto-status
+   ✓ Fuel - Consumption and cost tracking
+   ✓ Analytics - Operational metrics & reports
+
+🎯 KEY VALIDATION RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   • Cargo weight MUST NOT exceed vehicle capacity
+   • Driver license MUST be valid (not expired)
+   • Vehicle/Driver MUST be available for trip assignment
+   • Maintenance automatically sets vehicle to "In Shop"
+   • Trip completion updates odometer and calculates distance
+
+🛠️  TECH STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Backend:  Node.js + Express + MySQL
+   Frontend: React 18 + React Router
+   Auth:     JWT + bcrypt
+   Database: MySQL (Local)
+
+📁 PROJECT STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Fleet/
+   ├── server/          Backend API
+   ├── client/          React Frontend
+   ├── .env            Configuration
+   ├── SETUP.md        Full Documentation
+   └── README.md       Overview
+
+🔧 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Database Error?
+   → Check MySQL is running
+   → Verify .env credentials
+   → Run: npm run setup-db
+
+   Port in Use?
+   → Change PORT in .env file
+
+   Module Not Found?
+   → Run: npm run install-all
+
+📖 FULL DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   See SETUP.md for complete setup instructions,
+   API documentation, and feature details.
+
+╔══════════════════════════════════════════════════════════════════════╗
+║              Built with ❤️  for efficient fleet management           ║
+╚══════════════════════════════════════════════════════════════════════╝
+
