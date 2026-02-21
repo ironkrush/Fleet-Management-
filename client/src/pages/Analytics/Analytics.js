@@ -66,27 +66,37 @@ const Analytics = () => {
 
           <div className="analytics-card">
             <div className="analytics-label">Total Distance Traveled</div>
-            <div className="analytics-value">{analytics?.total_distance?.toFixed(0) || 0} km</div>
+            <div className="analytics-value">
+              {analytics?.total_distance ? Number(analytics.total_distance).toFixed(0) : 0} km
+            </div>
           </div>
 
           <div className="analytics-card">
             <div className="analytics-label">Average Fuel Efficiency</div>
-            <div className="analytics-value">{analytics?.fuel_efficiency || 0} km/L</div>
+            <div className="analytics-value">
+              {analytics?.fuel_efficiency ? Number(analytics.fuel_efficiency).toFixed(2) : 0} km/L
+            </div>
           </div>
 
           <div className="analytics-card">
             <div className="analytics-label">Total Fuel Cost</div>
-            <div className="analytics-value">${analytics?.total_fuel_cost?.toFixed(2) || 0}</div>
+            <div className="analytics-value">
+              ${analytics?.total_fuel_cost ? Number(analytics.total_fuel_cost).toFixed(2) : '0.00'}
+            </div>
           </div>
 
           <div className="analytics-card">
             <div className="analytics-label">Total Maintenance Cost</div>
-            <div className="analytics-value">${analytics?.total_maintenance_cost?.toFixed(2) || 0}</div>
+            <div className="analytics-value">
+              ${analytics?.total_maintenance_cost ? Number(analytics.total_maintenance_cost).toFixed(2) : '0.00'}
+            </div>
           </div>
 
           <div className="analytics-card">
             <div className="analytics-label">Total Operational Cost</div>
-            <div className="analytics-value">${analytics?.total_operational_cost?.toFixed(2) || 0}</div>
+            <div className="analytics-value">
+              ${analytics?.total_operational_cost ? Number(analytics.total_operational_cost).toFixed(2) : '0.00'}
+            </div>
           </div>
         </div>
       </div>
@@ -119,29 +129,37 @@ const Analytics = () => {
             <div className="stats-grid">
               <div className="stat-item">
                 <div className="stat-label">Total Trips</div>
-                <div className="stat-value">{vehicleStats.total_trips}</div>
+                <div className="stat-value">{vehicleStats.total_trips || 0}</div>
               </div>
               <div className="stat-item">
                 <div className="stat-label">Total Distance</div>
-                <div className="stat-value">{vehicleStats.total_distance?.toFixed(0) || 0} km</div>
+                <div className="stat-value">
+                  {vehicleStats.total_distance ? Number(vehicleStats.total_distance).toFixed(0) : 0} km
+                </div>
               </div>
               <div className="stat-item">
                 <div className="stat-label">Total Fuel Cost</div>
-                <div className="stat-value">${vehicleStats.total_fuel_cost?.toFixed(2) || 0}</div>
+                <div className="stat-value">
+                  ${vehicleStats.total_fuel_cost ? Number(vehicleStats.total_fuel_cost).toFixed(2) : '0.00'}
+                </div>
               </div>
               <div className="stat-item">
                 <div className="stat-label">Total Maintenance Cost</div>
-                <div className="stat-value">${vehicleStats.total_maintenance_cost?.toFixed(2) || 0}</div>
+                <div className="stat-value">
+                  ${vehicleStats.total_maintenance_cost ? Number(vehicleStats.total_maintenance_cost).toFixed(2) : '0.00'}
+                </div>
               </div>
               <div className="stat-item">
                 <div className="stat-label">Total Operational Cost</div>
-                <div className="stat-value">${vehicleStats.total_operational_cost?.toFixed(2) || 0}</div>
+                <div className="stat-value">
+                  ${vehicleStats.total_operational_cost ? Number(vehicleStats.total_operational_cost).toFixed(2) : '0.00'}
+                </div>
               </div>
               <div className="stat-item">
                 <div className="stat-label">Cost per km</div>
                 <div className="stat-value">
-                  ${vehicleStats.total_distance > 0 
-                    ? (vehicleStats.total_operational_cost / vehicleStats.total_distance).toFixed(2)
+                  ${(vehicleStats.total_distance && vehicleStats.total_operational_cost && Number(vehicleStats.total_distance) > 0)
+                    ? (Number(vehicleStats.total_operational_cost) / Number(vehicleStats.total_distance)).toFixed(2)
                     : '0.00'}
                 </div>
               </div>

@@ -91,11 +91,15 @@ const Dashboard = () => {
             </div>
             <div className="stat-item">
               <div className="stat-label">Total Distance</div>
-              <div className="stat-value">{analytics?.total_distance?.toFixed(0) || 0} km</div>
+              <div className="stat-value">
+                {analytics?.total_distance ? Number(analytics.total_distance).toFixed(0) : 0} km
+              </div>
             </div>
             <div className="stat-item">
               <div className="stat-label">Fuel Efficiency</div>
-              <div className="stat-value">{analytics?.fuel_efficiency || 0} km/L</div>
+              <div className="stat-value">
+                {analytics?.fuel_efficiency ? Number(analytics.fuel_efficiency).toFixed(2) : 0} km/L
+              </div>
             </div>
           </div>
         </div>
@@ -107,15 +111,21 @@ const Dashboard = () => {
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-label">Fuel Cost</div>
-              <div className="stat-value">${analytics?.total_fuel_cost?.toFixed(2) || 0}</div>
+              <div className="stat-value">
+                ${analytics?.total_fuel_cost ? Number(analytics.total_fuel_cost).toFixed(2) : '0.00'}
+              </div>
             </div>
             <div className="stat-item">
               <div className="stat-label">Maintenance Cost</div>
-              <div className="stat-value">${analytics?.total_maintenance_cost?.toFixed(2) || 0}</div>
+              <div className="stat-value">
+                ${analytics?.total_maintenance_cost ? Number(analytics.total_maintenance_cost).toFixed(2) : '0.00'}
+              </div>
             </div>
             <div className="stat-item">
               <div className="stat-label">Total Operational Cost</div>
-              <div className="stat-value">${analytics?.total_operational_cost?.toFixed(2) || 0}</div>
+              <div className="stat-value">
+                ${analytics?.total_operational_cost ? Number(analytics.total_operational_cost).toFixed(2) : '0.00'}
+              </div>
             </div>
           </div>
         </div>
